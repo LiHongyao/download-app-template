@@ -1,0 +1,136 @@
+@charset "utf-8";
+
+/* 动画 */
+@keyframes debounce {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-2px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(2px);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+.page {
+  height: 100%;
+}
+
+.page {
+  background: #fdc401 url("https://ddhbc.oss-cn-beijing.aliyuncs.com/images/0706_20210706100246.png") no-repeat;
+  background-size: 100% auto;
+  padding-top: 400px;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+}
+
+.platform {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.platform .icon-env {
+  width: 12px;
+  height: 15px;
+  margin-right: 5px;
+  display: none;
+}
+.platform .icon-env.show {
+  display: block;
+}
+
+.platform .app-name {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 22px;
+  color: #ffffff;
+}
+
+.download-button {
+  width: 211px;
+  height: 40px;
+  background: #ffffff;
+  margin-top: 17px;
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 22px;
+  color: #333333;
+  font-size: 15px;
+}
+
+.open-tips {
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 21px;
+  color: #fb4545;
+  display: none;
+}
+.open-tips.show {
+  display: block;
+}
+.tips {
+  display: none;
+  width: 160px;
+  position: absolute;
+  right: 6px;
+  top: 0;
+}
+.tips.show {
+  display: block;
+}
+.tips.ani {
+  animation: debounce 1s;
+}
+.dialog {
+  width: 100%;
+  height: 100%;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.dialog.show {
+  display: flex;
+}
+.dialog-content {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 4px 15px;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 12px;
+}
