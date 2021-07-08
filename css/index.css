@@ -34,9 +34,18 @@ body,
 }
 
 .page {
-  background: #fdc401 url("https://ddhbc.oss-cn-beijing.aliyuncs.com/images/0706_20210706100246.png") no-repeat;
+  background: #fdc401
+    url("https://ddhbc.oss-cn-beijing.aliyuncs.com/images/0706_20210706100246.png")
+    no-repeat;
   background-size: 100% auto;
-  padding-top: 400px;
+  position: relative;
+}
+
+.content {
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .wrap {
