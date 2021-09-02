@@ -2,7 +2,7 @@
  * @Author: Lee
  * @Date: 2021-07-06 09:24:01
  * @LastEditors: Lee
- * @LastEditTime: 2021-07-06 10:17:06
+ * @LastEditTime: 2021-09-02 13:00:32
  * @Description:
  */
 
@@ -22,10 +22,10 @@ function getEnv() {
 function setEnvImg(element, env) {
   switch (env) {
     case "android":
-      element.src = "https://ddhbc.oss-cn-beijing.aliyuncs.com/images/0706_20210706100314.png";
+      element.src = "/images/icon_android_1.png";
       break;
     case "ios":
-      element.src = "https://ddhbc.oss-cn-beijing.aliyuncs.com/images/0706_20210706100348.png";
+      element.src = "/images/icon_ios_1.png";
       break;
     default:
   }
