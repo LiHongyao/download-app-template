@@ -34,10 +34,6 @@ body,
 }
 
 .page {
-  /* background: #fdc401
-    url("https://ddhbc.oss-cn-beijing.aliyuncs.com/images/0706_20210706100246.png")
-    no-repeat; */
-  /* background-size: 100% auto; */
   position: relative;
   display: flex;
   justify-content: center;
@@ -124,6 +120,17 @@ body,
 }
 
 .open-tips.show {
+  display: block;
+}
+
+.browser-tips {
+  font-size: 12px;
+  margin-top: 20px;
+  color: #999999;
+  letter-spacing: 2px;
+  display: none;
+}
+.browser-tips.show {
   display: block;
 }
 

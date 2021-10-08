@@ -2,13 +2,14 @@
  * @Author: Lee
  * @Date: 2021-07-06 09:24:04
  * @LastEditors: Lee
- * @LastEditTime: 2021-09-02 13:23:47
+ * @LastEditTime: 2021-10-08 15:20:54
  * @Description:
  */
 
 (function () {
   // 1. 获取必要的DOM元素
   var oTips = document.querySelector(".tips");
+  var oBrowserTips = document.querySelector(".browser-tips");
   var oEnvImgForiOS = document.querySelector(".icon-env.ios");
   var oEnvImgForAndroid = document.querySelector(".icon-env.android");
   var oButtonDownload = document.querySelector(".download-button");
@@ -35,6 +36,9 @@
     case "android":
       oEnvImgForAndroid.classList.add("show");
       oButtonOpenApp.classList.add("show");
+      break;
+    case "unknown":
+      oBrowserTips.classList.add("show");
       break;
   }
 
@@ -77,6 +81,9 @@
             oDialog.classList.remove("show");
             clearTimeout(t);
           }, 1000);*/
+          break;
+        case "unknown":
+          alert("请在移动端（手机）浏览器打开此页面");
           break;
       }
     },
