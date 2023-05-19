@@ -2,51 +2,60 @@
  * @Author: Lee
  * @Date: 2021-07-06 09:06:35
  * @LastEditors: Lee
- * @LastEditTime: 2021-10-08 15:19:51
+ * @LastEditTime: 2023-05-19 15:56:22
  * @Description: 
 -->
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
-    <title>D积分</title>
-    <link rel="stylesheet" href="./css/index.css" />
-  </head>
-  <body>
-    <div class="page">
-      <!-- 丝带 -->
-      <div class="pattern left">
-        <img src="./images/download_pattern_left.png" />
-      </div>
-      <div class="pattern right">
-        <img src="./images/download_pattern_right.png" />
-      </div>
-      <!-- 内容 -->
-      <div class="wrap">
-        <img class="logo" src="./images/icon_logo.png" />
-        <div class="platform">
-          <img class="icon-env ios" src="./images/icon_ios_1.png" />
-          <img class="icon-env android" src="./images/icon_android_1.png" />
-          <span class="app-name">D积分</span>
-        </div>
-        <div class="download-button">点击下载</div>
-        <div class="open-tips">已安装?立即打开</div>
-        <div class="browser-tips">
-          温馨提示：请在移动端（手机）浏览器打开此页面
-        </div>
-      </div>
-      <!-- 提示信息@即将开放 -->
-      <div class="dialog">
-        <div class="dialog-content">即将开放</div>
-      </div>
-      <!-- 提示信息@微信环境 -->
-      <img class="tips" src="./images/tips.png" />
-    </div>
 
-    <script src="./js/utils.js"></script>
-    <script src="./js/index.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, viewport-fit=cover" />
+  <meta name="screen-orientation" content="portrait" />
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+  <title>产品名称</title>
+  <link rel="stylesheet" href="./plugins/toast/toast.css">
+  <link rel="stylesheet" href="./css/normalized.css">
+  <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+  <div class="page">
+    <!-- 丝带 -->
+    <div class="pattern left">
+      <img src="./images/download_pattern_left.png" />
+    </div>
+    <div class="pattern right">
+      <img src="./images/download_pattern_right.png" />
+    </div>
+    <!-- 内容 -->
+    <div class="wrap">
+      <!-- logo -->
+      <img class="logo" src="./images/logo.png" />
+      <!-- 应用名称 -->
+      <div class="app-name">产品名称</div>
+      <!-- 下载按钮 -->
+      <div class="download-button">点击下载</div>
+      <!-- 已安装提示 -->
+      <div class="open-tips">已安装?立即打开</div>
+      <!-- 温馨提示 -->
+      <div class="browser-tips">
+        温馨提示：请在移动端（手机）浏览器打开此页面
+      </div>
+    </div>
+    <!-- 提示信息@微信环境 -->
+    <div class="tips">
+      <div>请点击右上角选择</div>
+      <div>在默认浏览器中打开</div>
+    </div>
+  </div>
+  <script src="https://cdn.bootcss.com/vConsole/3.3.4/vconsole.min.js"></script>
+  <script src="./plugins/toast/toast.js"></script>
+  <script src="./libs/rem.js"></script>
+  <script src="./libs/constants.js"></script>
+  <script src="./libs/utils.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+
 </html>

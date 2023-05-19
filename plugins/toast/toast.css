@@ -1,0 +1,21 @@
+.lg-toast {
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.lg-toast.show {
+  display: flex;
+}
+.lg-toast-content {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.14rem;
+  color: #fff;
+  font-size: 0.28rem;
+}

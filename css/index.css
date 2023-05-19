@@ -20,28 +20,17 @@
     transform: translateX(2px);
   }
 }
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html,
-body,
 .page {
-  height: 100%;
-}
 
-.page {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: PingFangSC-Regular, PingFang SC;
 }
 
+/* 丝带 */
 .pattern {
-  width: 18%;
+  width: 1.5rem;
   position: absolute;
   top: 0;
 }
@@ -63,57 +52,41 @@ body,
 }
 
 .logo {
-  width: 120px;
-  height: 120px;
-  border-radius: 12px;
+  width: 1.6rem;
+  height: 1.6rem;
 }
 
-.platform {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.platform .icon-env {
-  width: 22px;
-  height: 22px;
-  margin-right: 10px;
-  display: none;
-}
-.platform .icon-env.show {
-  display: block;
-}
-
-.platform .app-name {
-  font-size: 16px;
+.app-name {
+  margin-top: 0.3rem;
+  font-size: 0.32rem;
   font-weight: 800;
-  line-height: 22px;
-  color: #505556;
-  letter-spacing: 1px;
+  color: #555;
+  font-weight: 600;
+  letter-spacing: 0.02rem;
 }
 
 .download-button {
-  width: 211px;
-  height: 40px;
+  width: 4.22rem;
+  height: 0.9rem;
+  border-radius: 0.45rem;
   background: #32b2a7;
-  margin-top: 17px;
+  margin-top: 0.34rem;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  border-radius: 22px;
   color: #ffffff;
-  font-size: 14px;
-
+  font-size: 0.32rem;
   cursor: pointer;
 }
 
 /* 已安装提示 */
 .open-tips {
-  margin-top: 20px;
-  font-size: 15px;
+  margin-top: 0.4rem;
+  font-size: 0.3rem;
   font-weight: bold;
-  line-height: 21px;
+  line-height: 0.42rem;
   color: #fb4545;
   display: none;
   cursor: pointer;
@@ -124,52 +97,47 @@ body,
 }
 
 .browser-tips {
-  font-size: 12px;
-  margin-top: 20px;
+  font-size: 0.24rem;
+  margin-top: 0.4rem;
   color: #999999;
-  letter-spacing: 2px;
+  letter-spacing: 0.04rem;
   display: none;
 }
 .browser-tips.show {
   display: block;
 }
 
+
+
 /* 微信环境提示 */
 
 .tips {
   display: none;
-  width: 160px;
-  position: absolute;
-  right: 6px;
-  top: 0;
+  position: fixed;
+  top: 0.18rem;
+  right: 0.2rem;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 0.12rem;
+  padding: 0.08rem 0.2rem;
+  color: #fff;
+  font-size: 0.26rem;
 }
+.tips::before {
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: -0.15rem;
+  right: 0.5rem;
+  display: block;
+  border-style: solid;
+  border-color: transparent transparent rgba(0, 0, 0, 0.75) transparent;
+  border-width: 0 0.16rem 0.16rem 0.16rem;
+}
+
 .tips.show {
   display: block;
 }
 .tips.ani {
   animation: debounce 1s;
-}
-
-/* 即将开放 */
-.dialog {
-  width: 100%;
-  height: 100%;
-
-  display: none;
-  justify-content: center;
-  align-items: center;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-.dialog.show {
-  display: flex;
-}
-.dialog-content {
-  background: rgba(0, 0, 0, 0.7);
-  padding: 4px 15px;
-  border-radius: 3px;
-  color: #fff;
-  font-size: 12px;
 }

@@ -1,0 +1,66 @@
+<!--
+ * @Author: Lee
+ * @Date: 2023-05-19 10:20:04
+ * @LastEditors: Lee
+ * @LastEditTime: 2023-05-19 15:56:42
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, viewport-fit=cover" />
+  <meta name="screen-orientation" content="portrait" />
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+  <title>产品名称</title>
+  <link rel="stylesheet" href="./plugins/toast/toast.css">
+  <link rel="stylesheet" href="./css/normalized.css">
+  <link rel="stylesheet" href="./css/register.css" />
+</head>
+
+<body>
+  <div class="page">
+    <!-- 头部 -->
+    <header>
+      <div class="title">登录/注册</div>
+      <div class="desc">未注册的手机号验证后将自动创建新账户</div>
+    </header>
+
+    <!-- 表单 -->
+    <div class="form">
+      <!-- 手机号 -->
+      <div class="form-item">
+        <div class="code">+86</div>
+        <input class="mobile" type="tel" max="11" placeholder="请输入手机号" />
+      </div>
+      <!-- 验证码 -->
+      <div class="form-item">
+        <input class="captcha" type="tel" maxlength="6" placeholder="请输入验证码" />
+        <div class="send btn show">发送验证码</div>
+        <div class="send count"></div>
+      </div>
+      <!-- 注册按钮 -->
+      <div class="submit-btn">注册</div>
+    </div>
+
+    <!-- 尾部 -->
+    <footer>
+      <input class="checked" type="checkbox">
+      &nbsp;
+      <span>我已阅读并同意</span>
+      <a href="https://www.baidu.com">隐私协议</a>
+      <span>和</span>
+      <a href="https://www.baidu.com">用户协议</a>
+    </footer>
+  </div>
+  <script src="https://cdn.bootcss.com/vConsole/3.3.4/vconsole.min.js"></script>
+  <script src="./plugins/toast/toast.js"></script>
+  <script src="./libs/rem.js"></script>
+  <script src="./libs/constants.js"></script>
+  <script src="./libs/utils.js"></script>
+  <script src="./js/register.js"></script>
+</body>
+
+</html>

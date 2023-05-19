@@ -1,0 +1,121 @@
+.page {
+  justify-content: flex-start !important;
+  background-color: #FFFFFF;
+  background-image: url('../images/bg.png');
+  background-size: 100% auto;
+  background-position: top left;
+  background-repeat: no-repeat;
+  padding: 1.36rem 0.48rem 0;
+}
+
+.title {
+  font-size: 0.44rem;
+
+  font-weight: 600;
+  color: #222222;
+  line-height: 0.6rem;
+}
+.desc {
+  font-size: 0.28rem;
+  font-weight: 400;
+  color: #666666;
+  line-height: 0.4rem;
+  margin-top: 0.12rem;
+}
+
+.form {
+  margin-top: 0.64rem;
+}
+.form-item {
+  height: 1rem;
+  background: #ffffff;
+  border-radius: 0.16rem;
+  padding: 0 0.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form-item:first-child {
+  margin-bottom: 0.4rem;
+}
+.form-item .code {
+  width: 0.9rem;
+  height: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f5f5;
+  border-radius: 0.08rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 0.32rem;
+  font-weight: 800;
+  color: #222222;
+}
+.form-item input {
+  flex: 1;
+  height: inherit;
+  border: none;
+  outline: none;
+  padding: 0 0.2rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 0.29rem;
+  font-weight: 600;
+  color: #333;
+  line-height: 0.4rem;
+}
+.form-item input::placeholder {
+  color: #999;
+}
+
+.form-item .send {
+  font-size: 0.28rem;
+  font-weight: 500;
+  color: #8872ff;
+  line-height: 0.4rem;
+  display: none;
+}
+.form-item .count {
+  color: #999;
+}
+.form-item .send.show {
+  display: block;
+}
+
+.submit-btn {
+  width: 6.54rem;
+  height: 0.96rem;
+  margin-top: 0.64rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, #bf5bfa 0%, #8872ff 100%);
+  box-shadow: 0 0.28rem 0.42rem 0 rgba(0, 0, 0, 0.1);
+  border-radius: 0.16rem;
+
+  font-size: 0.28rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 0.4rem;
+}
+
+footer {
+  position: fixed;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  bottom: 1rem;
+  font-size: 0.28rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 0.34rem;
+}
+
+.footer .checkbox {
+  margin-right: 0.1rem;
+}
+
+footer a {
+  color: #8061ff;
+}
