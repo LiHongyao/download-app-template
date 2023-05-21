@@ -2,7 +2,7 @@
  * @Author: Lee
  * @Date: 2021-07-06 09:24:01
  * @LastEditors: Lee
- * @LastEditTime: 2023-05-19 16:32:53
+ * @LastEditTime: 2023-05-21 10:16:49
  * @Description:
  */
 
@@ -57,14 +57,24 @@ function getEnv() {
  * @param {Object} options 配置项
  * @param {String} options.method 请求方法
  * @param {Object} options.headers 请求头
- * @param {Object} options.data 携带参数
+ * @param {Object} options.data 携带参数(POST)
+ * @param {Object} options.params 携带参数(GET)
  * @param {Function} options.success 请求成功
  * @param {Function} options.fail 请求失败
  */
 function request(url, options) {
   // 1. 创建请求对象
   let xhr = new XMLHttpRequest();
-  // 2. 配置请求
+  // 2. 处理GET参数
+  if ((!options.method || /GET/i.test(options.method)) && options.params) {
+    url += '?';
+    for (var k in options.params) {
+      url += k + '=' + options.params[k] + '&';
+    }
+    url = url.slice(0, -1);
+  }
+  console.log('请求连接：', url);
+  // 3. 配置请求
   xhr.open(options.method || 'GET', url, true);
   // -> 设置请求头
   xhr.setRequestHeader('Content-Type', 'application/json');
@@ -75,12 +85,13 @@ function request(url, options) {
   }
   // -> 设置响应类型
   xhr.responseType = 'json';
-  // 3. 发送请求
+  // 4. 发送请求
   xhr.send(options.data ? JSON.stringify(options.data) : null);
-  // 4. 监听请求
+  // 5. 监听请求
   xhr.onload = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
       var resp = xhr.response;
+      console.log('响应数据：', resp);
       if (resp && resp.code === 0) {
         options.success && options.success(resp);
       } else {
@@ -89,5 +100,9 @@ function request(url, options) {
     } else {
       options.fail && options.fail('网络异常，请稍后再试');
     }
+  };
+  // 6. 监听异常
+  xhr.onerror = function () {
+    options.fail && options.fail('网络异常，请稍后再试');
   };
 }

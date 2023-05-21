@@ -2,14 +2,14 @@
  * @Author: Lee
  * @Date: 2023-05-19 10:14:37
  * @LastEditors: Lee
- * @LastEditTime: 2023-05-19 16:17:54
+ * @LastEditTime: 2023-05-21 10:18:26
  * @Description:
  */
 
 // 服务器地址
-var kAPP_HOST = 'https://know-api.ddou.cn';
+var kAPP_HOST = '';
 // 获取下载链接
-var kURI_FOR_DOWNLOAD = kAPP_HOST + '/knows/common/download-url';
+var kURI_FOR_DOWNLOAD = kAPP_HOST + '';
 // 发送验证码
 var kURI_FOR_CAPTCHA = kAPP_HOST + '';
 // 注册

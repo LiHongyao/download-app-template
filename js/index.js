@@ -2,7 +2,7 @@
  * @Author: Lee
  * @Date: 2021-07-06 09:24:04
  * @LastEditors: Lee
- * @LastEditTime: 2023-05-19 16:34:12
+ * @LastEditTime: 2023-05-21 10:19:47
  * @Description:
  */
 
@@ -81,12 +81,15 @@
       // -- 应用环境
       if (downloadUrl) {
         // 1. 直接跳转
-        window.location.href = downloadUrl;
+        // window.location.href = downloadUrl;
+
         // 2. 需要注册
-        // var path = './register.html';
-        // path += '?referralCode=' + referralCode;
-        // path += '&downloadUrl=' + encodeURIComponent(downloadUrl);
-        // window.location.href = path;
+        var path = './register.html';
+        path += '?downloadUrl=' + encodeURIComponent(downloadUrl);
+        if (referralCode) {
+          path += '&referralCode=' + referralCode;
+        }
+        window.location.href = path;
       } else {
         Toast.info('暂未开放，敬请期待！');
       }

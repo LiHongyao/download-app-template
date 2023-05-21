@@ -2,7 +2,7 @@
  * @Author: Lee
  * @Date: 2023-05-19 11:10:28
  * @LastEditors: Lee
- * @LastEditTime: 2023-05-19 15:51:27
+ * @LastEditTime: 2023-05-21 10:19:51
  * @Description:
  */
 (function () {
@@ -27,6 +27,7 @@
   console.log('下载链接：', downloadUrl);
   // 4. 发送验证码
   oSendBtn.onclick = function () {
+    // -- 校验手机号
     var mobile = oMobile.value;
     if (!mobile) {
       Toast.info('请输入手机号');
@@ -37,22 +38,33 @@
       return;
     }
 
-    // 发送请求
-    // 启用定时器
-    oCount.textContent = count + '秒后重新获取';
-    oSendBtn.classList.remove('show');
-    oCount.classList.add('show');
-    timer = setInterval(function () {
-      count--;
-      oCount.textContent = count + '秒后重新获取';
-      if (count === 0) {
-        clearInterval(timer);
-        timer = null;
-        oSendBtn.classList.add('show');
-        oCount.classList.remove('show');
-        count = 60;
-      }
-    }, 1000);
+    // -- 发送验证码
+    request(kURI_FOR_CAPTCHA, {
+      params: {
+        phone: mobile,
+      },
+      success: function () {
+        Toast.info('验证码已发送');
+        // -- 启用倒计时
+        oCount.textContent = count + '秒后重新获取';
+        oSendBtn.classList.remove('show');
+        oCount.classList.add('show');
+        timer = setInterval(function () {
+          count--;
+          oCount.textContent = count + '秒后重新获取';
+          if (count === 0) {
+            clearInterval(timer);
+            timer = null;
+            oSendBtn.classList.add('show');
+            oCount.classList.remove('show');
+            count = 60;
+          }
+        }, 1000);
+      },
+      fail: function (msg) {
+        Toast.info(msg);
+      },
+    });
   };
   // 5. 点击注册
   oSubmit.onclick = function () {
@@ -78,11 +90,22 @@
       return;
     }
     // -- 执行注册
-    Toast.loading("注册中...");
-    setTimeout(() => {
-      Toast.hide();
-      Toast.info("注册成功，请勿重复操作");
-      window.location.href = decodeURIComponent(downloadUrl);
-    }, 1000);
+    Toast.loading('注册中...');
+    request(kURI_FOR_REGISTER, {
+      method: 'POST',
+      data: {
+        phone: mobile,
+        code: captcha,
+        referralCode: referralCode || undefined,
+      },
+      success: function () {
+        Toast.hide();
+        Toast.info('注册成功，请勿重复操作');
+        window.location.href = decodeURIComponent(downloadUrl);
+      },
+      fail: function (msg) {
+        Toast.info(msg);
+      },
+    });
   };
 })();
