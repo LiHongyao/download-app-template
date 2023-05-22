@@ -114,8 +114,8 @@
 .tips {
   display: none;
   position: fixed;
-  top: 0.18rem;
-  right: 0.2rem;
+  top: 0.16rem;
+  right: 0.16rem;
   background: rgba(0, 0, 0, 0.75);
   border-radius: 0.12rem;
   padding: 0.08rem 0.2rem;
@@ -128,7 +128,7 @@
   height: 0;
   position: absolute;
   top: -0.15rem;
-  right: 0.5rem;
+  right: 0.22rem;
   display: block;
   border-style: solid;
   border-color: transparent transparent rgba(0, 0, 0, 0.75) transparent;

@@ -1,6 +1,6 @@
 .page {
   justify-content: flex-start !important;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   background-image: url('../images/bg.png');
   background-size: 100% auto;
   background-position: top left;
@@ -58,13 +58,14 @@
   outline: none;
   padding: 0 0.2rem;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 0.29rem;
+  font-size: 0.28rem;
   font-weight: 600;
   color: #333;
   line-height: 0.4rem;
 }
 .form-item input::placeholder {
   color: #999;
+  font-weight: normal;
 }
 
 .form-item .send {
@@ -112,8 +113,28 @@ footer {
   line-height: 0.34rem;
 }
 
-.footer .checkbox {
-  margin-right: 0.1rem;
+footer input[type='checkbox'] {
+  position: relative;
+  zoom: 110%;
+}
+footer input[type='checkbox']::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0.32rem;
+  height: 0.32rem;
+  font-size: 0.24rem;
+  content: '';
+  border-radius: 0.08rem;
+}
+footer input[type='checkbox']:checked::after {
+  content: '✓';
+  color: #fff;
+  background-color: #8061ff;
 }
 
 footer a {
